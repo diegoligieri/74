@@ -69,6 +69,7 @@ Player::~Player()
 		it.second->removeInbox(inbox);
 	}
 
+	inbox->stopDecaying();
 	inbox->decrementReferenceCounter();
 
 	storeInbox->setParent(nullptr);

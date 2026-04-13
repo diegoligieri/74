@@ -1433,10 +1433,7 @@ int64_t Creature::getStepDuration() const
 		groundSpeed = 150;
 	}
 
-	//double duration = std::floor(1000 * groundSpeed / calculatedStepSpeed);
-	//int64_t stepDuration = std::ceil(duration / 50) * 50;
-	double duration = std::floor(1000 * groundSpeed) / stepSpeed;
-	int64_t stepDuration = std::ceil(duration / 50) * 50;
+	int64_t stepDuration = (static_cast<int64_t>(1000 * groundSpeed) / stepSpeed);
 
 	const Monster* monster = getMonster();
 	if (monster && monster->isTargetNearby() && !monster->isFleeing() && !monster->getMaster()) {
